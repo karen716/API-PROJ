@@ -9,16 +9,63 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
             background-color: #f7e8d4; /* Light brown */
+        }
+        .header {
+            width: 100%;
+            background-color: #6d4c41; /* Dark brown */
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Ensures header is above other content */
+        }
+        .header-content {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto; /* Center align header content */
+        }
+        .logo {
+            max-width: 50px; /* Adjust size as needed */
+            margin-right: 10px; /* Adjust spacing */
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header-left h1 {
+            font-size: 1.5em;
+            margin: 0;
+            color: white; /* Adjust text color */
+        }
+        .header-left p {
+            font-size: 0.8em;
+            margin: 0;
+            margin-left: 10px; /* Adjust spacing between logo and text */
+            color: #efebe9; /* Light brown */
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+        .header-right a {
+            margin-left: 20px; /* Adjust spacing between navigation links */
+            text-decoration: none;
+            color: white;
+            font-weight: bold; /* Make navigation links bold */
+            transition: color 0.3s ease;
+        }
+        .header-right a:hover {
+            color: #efebe9; /* Light brown on hover */
         }
         h1 {
             color: #4e342e; /* Dark brown */
             font-size: 2.5em;
+            margin-top: 80px; /* Adjust margin to account for fixed header */
+            text-align: center;
         }
         form {
             background: #d7ccc8; /* Medium light brown */
@@ -26,6 +73,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             width: 60%; /* Wider form */
+            margin: 20px auto; /* Center align form */
         }
         label {
             display: block;
@@ -35,7 +83,7 @@
             font-size: 1.2em;
         }
         input[type="text"] {
-            width: 98%;
+            width: 100%; /* Full width input */
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #8d6e63; /* Medium brown */
@@ -57,18 +105,12 @@
             background-color: #5d4037; /* Slightly darker brown */
         }
         #results {
-            margin-top: 20px;
             width: 80%;
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        #results {
-            background-color: #efebe9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px auto; /* Center align results */
         }
         .result-item {
             padding: 15px;
@@ -105,55 +147,64 @@
         .result-button:hover {
             background-color: #6d4c41;
         }
-            .header {
-            display: flex;
-            justify-content: space-between; /* Align items to the left and right */
-            align-items: center;
-            padding: 10px;
+        .brewery-card {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .logo {
-            max-width: 50px; /* Adjust size as needed */
-            margin-right: 10px; /* Adjust spacing */
-            margin-left: 50px; /* Add margin to the left of the logo */
+        .brewery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .header-left {
-            display: flex;
-            align-items: center;
+        .brewery-name {
+            font-size: 1.5em;
+            color: #4e342e; /* Dark brown */
+            margin-bottom: 10px;
         }
-        .header-left h1 {
-            margin-left: 10px; /* Adjust spacing between logo and text */
+        .brewery-type {
+            color: #6d4c41; /* Medium brown */
+            margin-bottom: 5px;
         }
-        .header-right {
-            display: flex;
-            align-items: center;
-            margin-left: auto; /* Push navigation links to the right */
+        .brewery-address {
+            color: #8d6e63; /* Light brown */
+            margin-bottom: 5px;
         }
-        .header-right a {
-            margin-left: 50px; /* Adjust spacing between navigation links */
+        .brewery-phone {
+            color: #8d6e63; /* Light brown */
+            margin-bottom: 5px;
+        }
+        .brewery-website {
+            color: #8d6e63; /* Light brown */
             text-decoration: none;
-            color: black;
-            font-weight: bold; /* Make navigation links bold */
+            display: inline-block;
+            margin-top: 10px;
+            transition: color 0.3s ease;
         }
-        .header-right a:last-child {
-            margin-right: 200px; /* Margin on the right side of the last navigation link */
-        }
-        .header-right a:first-child {
-            margin-left: 0; /* No margin on the first link */
+        .brewery-website:hover {
+            color: #6d4c41; /* Dark brown */
         }
     </style>
 </head>
 <body>
-     <header class="header">
-        <div class="header-left">
-            <img src="logo.png" alt="Logo" class="logo">
-            <h1>Open Brewery DB</h1>
-        </div>
-        <div class="header-right">
-            <a href="#breweries">Breweries</a>
-            <a href="#docs">Docs</a>
-            <a href="#faqs">FAQs</a>
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <img src="logo.png" alt="Logo" class="logo">
+                <div>
+                    <h1>Open Brewery DB</h1>
+                    <p>Search for breweries worldwide</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <a href="#breweries">Breweries</a>
+                <a href="#docs">Docs</a>
+                <a href="#faqs">FAQs</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+            </div>
         </div>
     </header>
     <h1>Search for Breweries</h1>
@@ -162,7 +213,7 @@
         <input type="text" id="searchTerm" name="searchTerm" placeholder="e.g. IPA, Lager">
         <button type="submit">Search</button>
     </form>
-    <h2>Results:</h2>
+    <h2 style="margin-left: 140px;">Results:</h2>
     <div id="results"></div>
 
     <script src="script.js"></script>
