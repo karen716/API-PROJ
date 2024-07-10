@@ -63,6 +63,47 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        
+        #results {
+            background-color: #efebe9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .result-item {
+            padding: 15px;
+            border-bottom: 1px solid #d7ccc8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        .result-title {
+            font-weight: bold;
+            color: #4e342e;
+            margin-bottom: 5px;
+        }
+        .result-address {
+            color: #8d6e63;
+        }
+        .result-details {
+            display: flex;
+            flex-direction: column;
+        }
+        .result-button {
+            background-color: #8d6e63;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .result-button:hover {
+            background-color: #6d4c41;
         }
     </style>
 </head>
