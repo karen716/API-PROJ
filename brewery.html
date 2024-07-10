@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -105,9 +105,57 @@
         .result-button:hover {
             background-color: #6d4c41;
         }
+            .header {
+            display: flex;
+            justify-content: space-between; /* Align items to the left and right */
+            align-items: center;
+            padding: 10px;
+        }
+        .logo {
+            max-width: 50px; /* Adjust size as needed */
+            margin-right: 10px; /* Adjust spacing */
+            margin-left: 50px; /* Add margin to the left of the logo */
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header-left h1 {
+            margin-left: 10px; /* Adjust spacing between logo and text */
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            margin-left: auto; /* Push navigation links to the right */
+        }
+        .header-right a {
+            margin-left: 50px; /* Adjust spacing between navigation links */
+            text-decoration: none;
+            color: black;
+            font-weight: bold; /* Make navigation links bold */
+        }
+        .header-right a:last-child {
+            margin-right: 200px; /* Margin on the right side of the last navigation link */
+        }
+        .header-right a:first-child {
+            margin-left: 0; /* No margin on the first link */
+        }
     </style>
 </head>
 <body>
+     <header class="header">
+        <div class="header-left">
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1>Open Brewery DB</h1>
+        </div>
+        <div class="header-right">
+            <a href="#breweries">Breweries</a>
+            <a href="#docs">Docs</a>
+            <a href="#faqs">FAQs</a>
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+        </div>
+    </header>
     <h1>Search for Breweries</h1>
     <form id="breweryForm">
         <label for="searchTerm">Enter search term:</label>
