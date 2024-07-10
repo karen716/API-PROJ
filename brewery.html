@@ -4,12 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brewery Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f7e8d4; /* Light brown */
+        }
+        h1 {
+            color: #4e342e; /* Dark brown */
+            font-size: 2.5em;
+        }
+        form {
+            background: #d7ccc8; /* Medium light brown */
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 60%; /* Wider form */
+        }
+        label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: bold;
+            color: #4e342e; /* Dark brown */
+            font-size: 1.2em;
+        }
+        input[type="text"] {
+            width: 98%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #8d6e63; /* Medium brown */
+            border-radius: 6px;
+            background-color: #efebe9; /* Very light brown */
+            font-size: 1.1em;
+        }
+        button {
+            padding: 12px 18px;
+            color: #fff;
+            background-color: #6d4c41; /* Dark brown */
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+        }
+        button:hover {
+            background-color: #5d4037; /* Slightly darker brown */
+        }
+        #results {
+            margin-top: 20px;
+            width: 80%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
     <h1>Search for Breweries</h1>
     <form id="breweryForm">
         <label for="searchTerm">Enter search term:</label>
-        <input type="text" id="searchTerm" name="searchTerm">
+        <input type="text" id="searchTerm" name="searchTerm" placeholder="e.g. IPA, Lager">
         <button type="submit">Search</button>
     </form>
     <h2>Results:</h2>
