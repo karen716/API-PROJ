@@ -14,5 +14,11 @@ This project allows users to search for breweries using the Open Brewery DB API.
   - FAQs
   - Projects
   - About
+    
+## API
 
+-https://www.openbrewerydb.org/
 
+## Clone Repo
+
+-https://github.com/karen716/API-PROJ
